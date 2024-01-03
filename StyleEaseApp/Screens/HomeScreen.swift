@@ -229,59 +229,12 @@ struct SearchAndScanView: View {
     }
 }
 
-
-// Filter view to display filters based on categories from API(different catogeries like: Men, Women,Children)
-//struct FilterView: View {
-//    @State private var selectedCategory = ""
-//    private let categories = ["All", "Men", "Women", "Children"]
-//
-//    var body: some View {
-//        VStack {
-//            ScrollView(.horizontal, showsIndicators: false) {
-//                HStack {
-//                    ForEach(categories, id: \.self) { category in
-//                        Button(action: { selectedCategory = category }) {
-//                            CategoryView(isActive: selectedCategory == category, text: category)
-//                        }
-//                    }
-//                }
-//                .padding()
-//            }
-//
-//            Text(selectedCategory)
-//                .font(.custom("Montserrat", size: 24))
-//                .padding(.horizontal)
-//                .multilineTextAlignment(.leading)
-//
-//
-//            ScrollView(.horizontal, showsIndicators: false) {
-//                HStack(spacing: 0) {
-//                    ForEach(0 ..< 4) { i in
-//                        if selectedCategory == "All" || selectedCategory == categories[i + 1] {
-//                            NavigationLink(
-//                                destination: DetailScreen(),
-//                                label: {
-//                                    ProductCardView(image: Image("clothes_\(i + 1)"), size: 210)
-//                                })
-//                                .navigationBarHidden(true)
-//                                .foregroundColor(.black)
-//                        }
-//                    }
-//                    .padding(.leading)
-//                }
-//            }
-//            .padding(.bottom)
-//        }
-//    }
-//}
-
-
 // CategoryView with NavigationLink
 struct CategoryView: View {
     let isActive: Bool
     let text: String
     var body: some View {
-        NavigationLink(destination: DetailScreen()) { // Replace CategoryDetailScreen with the actual destination
+        NavigationLink(destination: DetailScreen(product: <#Product#>)) { // Replace CategoryDetailScreen with the actual destination
             VStack(alignment: .leading, spacing: 0) {
                 Text(text)
                     .font(.system(size: 18))

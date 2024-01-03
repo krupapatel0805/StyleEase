@@ -22,7 +22,7 @@ struct Product: Identifiable {
     let description: String
     let size: Size // Assuming 'Size' is another custom struct for product dimensions
     let colors: [ColorOption] // Available color options
-    let price: Double
+    let price: Int
     let code: String
        let fit: String
        let length: String
@@ -37,7 +37,7 @@ struct Product: Identifiable {
     // Add other properties as needed for your products
 
     // Initialization of the Product
-    init(id: Int, name: String, imageName: String, description: String, size: Size, colors: [ColorOption], price: Double, code: String, fit:String, length: String, style: String, pattern: String,material: String, graphicalAppereance: String, lining: String, liningPercentage: Double, shell: String, shellPercentage: Double) {
+    init(id: Int, name: String, imageName: String, description: String, size: Size, colors: [ColorOption], price: Int, code: String, fit:String, length: String, style: String, pattern: String,material: String, graphicalAppereance: String, lining: String, liningPercentage: Double, shell: String, shellPercentage: Double) {
         self.id = id
         self.name = name
         self.imageName = imageName
